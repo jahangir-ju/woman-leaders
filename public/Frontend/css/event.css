@@ -1,0 +1,50 @@
+#project{
+	font-family:  sans-serif;
+}
+.urlbutton {
+	background: rgb(70, 163, 157);
+    text-align: center;
+    font-weight: bold;
+    padding: 4px 0px;
+    }
+
+.urlbutton a{
+    color: white;
+}
+.urlbutton a:hover{
+    text-decoration: none;
+     color: black;
+}
+
+
+.my-3 a {
+	text-decoration: none;
+}
+
+.my-3 a:hover {
+	text-decoration: none;
+}
+.speaker{
+	text-align: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+.description button{
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background: rgb(70, 163, 157);
+}
+.description button a{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+

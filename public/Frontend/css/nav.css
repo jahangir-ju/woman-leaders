@@ -1,0 +1,55 @@
+/*-----------Top header nav css------------*/
+
+.before-header{
+    padding: 8px 0px;
+    width: 100%;
+    background-color:#fff;
+    
+  }
+  .memu li a{
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-block;
+      padding-right: 9px;
+      color: #999;
+      border-right: 1px #999 solid;
+  }
+  .memu li a:hover{
+      color: #bb0000;
+    
+  }
+
+  /*main navbar CSS--------------*/
+  
+#nav{
+    background-image: linear-gradient(to bottom right, #272cb7  , #94bbe9);;
+  }
+  .navbar{
+    padding: 0px;
+    
+  }
+  .navbar-nav li{
+    z-index: 1;
+    text-align: center;
+  }
+  .navbar-nav li a{
+    font-size: 17px;
+    padding: 15px 20px!important;
+    border-right: 1px solid #fff;
+  }
+  
+  .bg-light {
+    background-image: linear-gradient(to bottom right, #272cb7  , #94bbe9);
+  }
+  .navbar-light .navbar-nav .nav-link{
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .navbar-nav li a:hover{
+    transition: 0.2s all;
+    color: #d91c1c!important;
+    overflow: hidden;
+    
+  
+  }

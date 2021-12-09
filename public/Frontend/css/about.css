@@ -1,0 +1,12 @@
+.bodymodule{
+    font-family: cursive;
+    text-align: justify;
+    margin: 15px 30px;
+    padding: 5px 11px;
+}
+.bodymodule h3{
+    text-align: -webkit-center;
+    color: slategray;
+    padding-bottom: 10px;
+
+}
