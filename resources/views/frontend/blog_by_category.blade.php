@@ -1,12 +1,9 @@
 @extends('index')
 @section('content')
 
-
     <div class="row pt-4">
       <!------------Blog post Modul start-------------->
-      <div class="col-md-8">
-
-
+      <div class="col-md-12">
         <div class="temp2">
             <h2>Leadership</h2></div>
             
@@ -76,55 +73,9 @@
                       </div>
                   </div>
             </article>
-
-      </div>
-
-  
-   
+      </div>   
       <!------------Blog post Modul start-------------->
-      <!---------Left Module start------>
-      <div class="col-md-4">
-
-        <div class="moduletable">
-    
-          <h3>Category</span> </h3>
-          
-          <div class="module-body">
-            <div class="custom">
-              <ul>
-                <li><a href=""> Bangladeshi Ideal </a></li>
-                <li><a href=""> Bangladeshi Ideal </a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-        <div class="moduletable">
-    
-          <h3>Archives</span> </h3>
-          
-          <div class="module-body">
-            <div class="custom">
-              <ul>
-                <li><a href=""> January </a></li>
-                <li><a href=""> Feburary </a></li>
-                <li><a href=""> March </a></li>
-                <li><a href=""> April </a></li>
-                <li><a href=""> May </a></li>
-                <li><a href=""> June </a></li>
-                <li><a href=""> July </a></li>
-                <li><a href=""> Augest </a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-
-      </div><!---------Left Module start------>
-
         <div class="clearfix"></div>
     </div>
-
-  
 
   @endsection()

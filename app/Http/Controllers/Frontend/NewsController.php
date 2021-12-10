@@ -13,6 +13,7 @@ class NewsController extends Controller
         return view('frontend/news',compact('news_views'));
     }
     public function newsDetails($id){
-        return $id;
+        $news_details = news::find($id);
+        return view('frontend/news_view',compact('news_details'));
     }
 }

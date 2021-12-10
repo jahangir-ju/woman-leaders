@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
         <title>
-        Canteen Admin
+        Women Leaders Admin
         </title>
         <link href="{{asset('backend/node_modules/mdi/css/materialdesignicons.min.css')}}" rel="stylesheet">
         <link href="{{asset('backend/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}" rel="stylesheet">

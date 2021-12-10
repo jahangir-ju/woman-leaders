@@ -9,9 +9,8 @@
 
             <img class="card-img-top" src="{{asset(Storage::disk('local')->url($news->file))}}" alt="Card image cap" style="height:300px;">
             <div class="card-body">
-              <h2 class="card-title"><a href="">{{$news->title}}</a></h2>
+              <h2 class="card-title"><a href="{{ route('news.view',$news->id) }}">{{$news->title}}</a></h2>
               <h5 class="card-title">{{$news->created_at}}</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis quam, sequi dolorum excepturi repudiandae atque dignissimos voluptatum aperiam!</p>
             </div>
           </div>
       </div>

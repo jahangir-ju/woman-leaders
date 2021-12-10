@@ -3,7 +3,7 @@
   <section class="p-5">
 
     <center><h2>Personal Information</h2></center> 
-    <center><p>Fill out the information below,</p></center>
+    <center><p>Fill out All the information below</p></center>
       @if ($errors->any())
                       <div class="alert alert-danger">
                           <ul>

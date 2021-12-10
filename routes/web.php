@@ -26,15 +26,15 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('news/details/{id}', 'NewsController@newsDetails')->name('newsDetails');
 
-    Route::get('/events', 'EventController@event')->name('events');
+    Route::get('events', 'EventController@event')->name('events');
     Route::get('event/description/{id}', 'EventController@description')->name('event.description');
     Route::get('event/register/{id}', 'EventController@register')->name('event.register');
     Route::post('event/register/store/{id}', 'EventController@register_store')->name('event.register.store');
 
 
-    Route::get('/blogindex', 'BlogController@index')->name('blog');
-    Route::get('/category', 'BlogController@blog_by_category')->name('blog_by_category');
-    Route::get('/view_blog', 'BlogController@view_blog')->name('view_blog');
+    Route::get('blog/index', 'BlogController@index')->name('blog');
+    Route::get('blog/category/{id}', 'BlogController@blog_by_category')->name('blog_by_category');
+    Route::get('blog/details/{id}', 'BlogController@view_blog')->name('view_blog');
 
 });
 
@@ -44,8 +44,8 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 Route::group(['namespace' => 'Admin'], function () {
 
-    Route::get('/login', 'DashboardController@index');
-    Route::post('/dashboard', 'DashboardController@login')->name('admin-login');
+    //Route::get('/login', 'DashboardController@index');
+    //Route::post('dashboard', 'DashboardController@login')->name('admin-login');
     Route::get('/dashboard', 'DashboardController@dashboard');
 
     Route::get('blog', 'BlogController@index')->name('blog.index');
