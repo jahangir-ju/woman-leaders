@@ -22,7 +22,7 @@
   /*main navbar CSS--------------*/
   
 #nav{
-    background-image: linear-gradient(to bottom right, #272cb7  , #94bbe9);;
+      background-image: linear-gradient(to bottom right, #b74545 , #8b11a1);
   }
   .navbar{
     padding: 0px;
@@ -39,7 +39,7 @@
   }
   
   .bg-light {
-    background-image: linear-gradient(to bottom right, #272cb7  , #94bbe9);
+       background-image: linear-gradient(to bottom right, #b74545 , #8b11a1);
   }
   .navbar-light .navbar-nav .nav-link{
     color: #fff;
@@ -53,3 +53,8 @@
     
   
   }
+  .btn-outline-success {
+    color: var(--light);
+    background-color: #139b0e;
+    background-image: none;
+    border-color: #28a745;

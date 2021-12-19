@@ -11,11 +11,12 @@ use Session;
 class ProfileController extends Controller
 {
     public function index(){
-        return view('frontend.user.profile');
+        $id          = session('user_id');
+        //$profileinfo = Users::where('id', $id)->first();
+        //$userBlogs   = Blog::where('user_id', $id)->get();
+        return view('frontend.user.profile',compact('userBlogs'));
     }
-    public function blog(){
-        return view('frontend.user.create');
-    }
+
     public function userBlogCreate(Request $request){
         
          $validateData = $request->validate([
@@ -38,8 +39,9 @@ class ProfileController extends Controller
         $data->pictureCaption   = $request->pictureCaption;
         $data->picture          = $imageName;
 
-       $data->save();
-        return redirect()->back()->with('status','wait for admin permission');
+        //dd($data);
+        $data->save();
+        return view('frontend.user.profile')->with('status','Blog sent to admin approve');
     }
     }
 

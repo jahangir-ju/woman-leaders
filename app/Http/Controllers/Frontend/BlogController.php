@@ -28,4 +28,7 @@ class BlogController extends Controller
         $relatedblog =Blog::paginate(5);
         return view('frontend/blog_view',compact('blogDetails','relatedblog'));
     }
+    public function search(Request $search){
+        return "fsdlf";
+    }
 }

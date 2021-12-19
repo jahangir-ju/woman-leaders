@@ -27,7 +27,6 @@ Route::get('/verify/{hash}', function ($hash) {
 
 })->name('verify.hash');
 
-
 Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('home', 'HomepageController@index')->name('home');
@@ -49,6 +48,7 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('blog/index', 'BlogController@index')->name('blog');
     Route::get('blog/category/{id}', 'BlogController@blog_by_category')->name('blog_by_category');
     Route::get('blog/details/{id}', 'BlogController@view_blog')->name('view_blog');
+    Route::post('blog/search', 'BlogController@search')->name('blog.search');
 
     Route::get('peacePromoting', 'ActivitiesController@peacePromoting')->name('peacePromoting');
     Route::get('skillLeadership', 'ActivitiesController@skillLeadership')->name('skillLeadership');
@@ -63,25 +63,20 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 
     Route::get('user/register', 'UserController@register')->name('userRegister');
-    
-   
+       
 
     Route::get('user/profile', 'ProfileController@index')->name('user.profile');
-    Route::get('user/blog', 'ProfileController@blog')->name('userBlog');
     Route::post('user/blog/create', 'ProfileController@userBlogCreate')->name('user.blog.create');
 
 });
 
 
-
-   Route::get('login', 'Admin\DashboardController@index')->name('login');
+    Route::get('login', 'Admin\DashboardController@index')->name('login');
     Route::post('admin/dashboard', 'Admin\DashboardController@login')->name('admin-login');
     Route::get('admin/logout', 'Admin\DashboardController@logout')->name('admin.logout');
 
+    Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
 
-Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
-
- 
     Route::get('blog', 'BlogController@index')->name('blog.index');
     Route::get('blog/create', 'BlogController@create')->name('blog.create');
     Route::post('blog/save', 'BlogController@save')->name('blog.save');
@@ -91,8 +86,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
     Route::get('blog/view/{id}', 'BlogController@view')->name('blog.view');
     Route::get('blog/edit/{id}', 'BlogController@edit')->name('blog.edit');
     Route::post('blog/update/{id}', 'BlogController@update')->name('blog.update');
-
-
 
     Route::get('event', 'EventController@index')->name('event.index');
     Route::get('event/create', 'EventController@create')->name('event.create');
@@ -105,9 +98,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
     Route::post('event/update/{id}', 'EventController@update')->name('event.update');
     Route::get('event/registerall', 'EventController@registerall')->name('eventRegister');
 
-
-
-
     Route::get('news/all', 'NewsController@index')->name('news.index');
     Route::get('news/manage', 'NewsController@manage')->name('news.manage');
     Route::get('news/create', 'NewsController@create')->name('news.create');
@@ -119,14 +109,11 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
     Route::get('news/edit/{id}', 'NewsController@edit')->name('news.edit');
     Route::post('news/update/{id}', 'NewsController@update')->name('news.update');
 
-
-
     Route::get('category', 'CategoryController@index')->name('category.index');
     Route::get('category/create', 'CategoryController@create')->name('category.create');
     Route::post('category/save', 'CategoryController@save')->name('category.save');
     Route::get('active/{id}', 'CategoryController@active_category')->name('category.active');
     Route::get('unactive/{id}', 'CategoryController@unactive_category')->name('category.unactive');
-
 
 });
 
