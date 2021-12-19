@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserVerify;
 use Session;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -44,7 +45,7 @@ class UserController extends Controller
     }
     public function loign(Request $request){
 
-          $this->validate($request, [
+        $this->validate($request, [
             'user_email'    => 'required|email',
             'user_password' => 'required|min:8',
         ]);
@@ -52,17 +53,10 @@ class UserController extends Controller
         $email    = $request->user_email;
         $password = $request->user_password;
 
-        $result = User::where('email', $email)
-            ->where('password', $password)
-            ->first();
-
-        if ($result) {
-
-            Session::put('user_id', $result->id);
-            Session::put('user_name', $result->name);
-           // return "login";
-
-             return redirect()->route('home');
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            Session::put('name',auth()->user()->name);
+            Session::put('id', auth()->id());
+            return redirect(route('home'));
         } else {
 
             Session::flash('message', 'Email or Password Invalid');

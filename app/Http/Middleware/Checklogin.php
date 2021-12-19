@@ -21,9 +21,9 @@ class Checklogin
       private function AdminAuthCheck()
     {
 
-        $admin_id = Session::get('id');
-        if (!$admin_id) {
-            return Redirect()->route('login')->send();
+        $role = auth()->user()->role;
+        if ($role != 1) {
+            return Redirect()->route('home')->send();
         }
     }
 

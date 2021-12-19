@@ -29,7 +29,7 @@ Route::get('/verify/{hash}', function ($hash) {
 
 Route::group(['namespace' => 'Frontend'], function () {
 
-    Route::get('home', 'HomepageController@index')->name('home');
+    Route::get('/', 'HomepageController@index')->name('home');
     Route::get('team', 'TeamController@index')->name('team');
     Route::get('about', 'AboutController@index')->name('about');
     Route::get('contact', 'ContactController@index')->name('contact');
@@ -71,11 +71,12 @@ Route::group(['namespace' => 'Frontend'], function () {
 });
 
 
-    Route::get('login', 'Admin\DashboardController@index')->name('login');
-    Route::post('admin/dashboard', 'Admin\DashboardController@login')->name('admin-login');
-    Route::get('admin/logout', 'Admin\DashboardController@logout')->name('admin.logout');
+Route::get('login', 'Admin\DashboardController@index')->name('login');
+Route::post('login', 'Admin\DashboardController@login')->name('admin-login');
 
-    Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth|login', 'prefix'=> 'admin'], function () {
+
+    Route::get('logout', 'DashboardController@logout')->name('admin.logout');
 
     Route::get('blog', 'BlogController@index')->name('blog.index');
     Route::get('blog/create', 'BlogController@create')->name('blog.create');
