@@ -16,11 +16,11 @@ class ActivitiesController extends Controller
     public function publications(){
         return view('frontend.activities.publications');
     }
-    public function AwarnessRaising(){
-        return view('frontend.activities.AwarnessRaising');
+    public function awarnessRaising(){
+        return view('frontend.activities.awarnessRaising');
     }
-    public function WomenEmpowerment(){
-        return view('frontend.activities.WomenEmpowerment');
+    public function womenEmpowerment(){
+        return view('frontend.activities.womenEmpowerment');
     }
 
 }

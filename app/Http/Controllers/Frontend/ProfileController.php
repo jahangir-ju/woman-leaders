@@ -13,7 +13,7 @@ class ProfileController extends Controller
     public function index(){
         $id          = session('user_id');
         //$profileinfo = Users::where('id', $id)->first();
-        //$userBlogs   = Blog::where('user_id', $id)->get();
+        $userBlogs   = Blog::where('id', $id)->get();
         return view('frontend.user.profile',compact('userBlogs'));
     }
 
@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
         //dd($data);
         $data->save();
-        return view('frontend.user.profile')->with('status','Blog sent to admin approve');
+        return redirect()->back();
     }
     }
 

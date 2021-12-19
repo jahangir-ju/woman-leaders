@@ -9,7 +9,7 @@ use App\Blog;
 class HomepageController extends Controller
 {
     public function index(){
-        $blogView = Blog::where('status', '=', 1)->latest()->paginate(4);
+        $blogView = Blog::where('status', '1')->latest()->get();
         return view('frontend.dashboard',compact('blogView'));
     }
 }

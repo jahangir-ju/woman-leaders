@@ -29,6 +29,19 @@ class BlogController extends Controller
         return view('frontend/blog_view',compact('blogDetails','relatedblog'));
     }
     public function search(Request $search){
-        return "fsdlf";
+
+        $this->validate($search, [
+            'search' => 'required'
+        ]);
+        $search_txt = $search->search;
+
+        $searchBlogs = Blog::orderBy('id', 'desc')
+        ->where('title', 'like', '%'.$search_txt.'%')
+        ->get();
+
+        //dd($search_blogs);
+
+        return view('frontend.search',compact('searchBlogs'));
+       
     }
 }

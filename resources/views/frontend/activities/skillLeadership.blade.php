@@ -1,31 +1,29 @@
 
-
 @extends('index')
+<link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/activities.css') }}">
 @section('content')
+	<div class="abilityBody">
 
-Skill and leadership.blade.php
+		<h2>KEY TAKEAWAYS</h2>
+		<p>Leadership skills can play a large role in a person's career development. Technical skills and a college degree may only take you so far. To be an effective leader and help move your career forward, you'll also need soft skills, such as the ability to be a good listener and communicator.</p>
 
-Internet based social sites like Twitter, Facebook and so on are a noteworthy center 
-point for clients to express their sentiments on the web. Sentiment analysis which is 
-likewise called opinion mining, includes in structure a framework to gather and analyze 
-conclusions about the item made in blog entries, remarks, or surveys. We analyzed 
-some cricket player’s popularity by their fans tweet. Twitter is very popular for 
-providing API’s to data miner which are exceptionally valuable for picking up users 
-tweets for research. We used twitter's 'STREAMING API' for collect the tweets about 
-13 different players of Bangladesh Cricket Team.
-Twitter's Streaming API is a push of information as tweets occur in real-time. It is used 
-for scrapping real time data. In our research, it is important to scrap real time data 
-because of measuring popularity of a player in specific time. We wrote a python script 
-that search for specific player’s name in twitter with the help of Streaming API key. 
-When people wrote about those names of players, the API push that tweet in our script 
-and then the data has been saved into the disk in different CSV files. We searched for 
-thirteen different players name in Bengali language from 1st October 2018 till 31st 
-December 2018. The script has been run during 3 months continuously in a 'Raspberry 
-Pi' which was ran in a Debian system. We named this bot as a “TwitterPiCollector”. 
-The tweets saved into the disk we have searched for, stored into 13 different CSV files. 
-Only few numbers of people write tweets in Bengali language, so that we didn't get 
-huge amount of data. We have now total 2952 tweets about 13 different players name. 
-Figure 3.3.1 shows the architecture of TwitterPiCollector
 
+		<p>There are several core leadership skills that are considered important traits to help you become a more effective leader. Whether it's taking the initiative, developing critical thinking skills, or learning how to motivate and empower those around you, you must constantly be challenging yourself to enhance your leadership capabilities.</p>
+
+
+		<p>By showing that you have what it takes to be a leader, you can fast-track your career. If you're looking for a new job or promotion, you're more likely to get where you want to go if you have a steady track record of being successful in leadership roles in your professional and personal life.</p>
+
+		<p>There are many different types of leaders, but very few people are natural, born leaders. Most of us need to learn, develop, and improve on how to be a good leader. Leadership development involves identifying and mastering the key skills and characteristics that are required to become a successful leader.</p>
+
+		<h6>KEY TAKEAWAYS</h6>
+		<ul>
+			<li>Leadership skills are considered critical traits necessary to get to the top of any career field.</li>
+			<li>Early on, step out of your comfort zone, challenge yourself to improve, and remember; the more work you take on, the more you learn.</li>
+			<li>Be a critical thinker; good leaders can foresee potential problems before they happen.</li>
+			<li>Learn how to listen and provide feedback since listening effectively to employees and customers are necessary to be an effective leader</li>
+			<li>Motivate and positively influence others, encourage and empower them, and be their support system.</li>
+		</ul>
+
+	</div>
 
 @endsection

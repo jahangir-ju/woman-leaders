@@ -48,14 +48,13 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('blog/index', 'BlogController@index')->name('blog');
     Route::get('blog/category/{id}', 'BlogController@blog_by_category')->name('blog_by_category');
     Route::get('blog/details/{id}', 'BlogController@view_blog')->name('view_blog');
-    Route::post('blog/search', 'BlogController@search')->name('blog.search');
+    Route::get('blog/search', 'BlogController@search')->name('blog.search');
 
     Route::get('peacePromoting', 'ActivitiesController@peacePromoting')->name('peacePromoting');
     Route::get('skillLeadership', 'ActivitiesController@skillLeadership')->name('skillLeadership');
     Route::get('publications', 'ActivitiesController@publications')->name('publications');
-    Route::get('AwarnessRaising', 'ActivitiesController@AwarnessRaising')->name('AwarnessRaising');
-    Route::get('WomenEmpowerment', 'ActivitiesController@WomenEmpowerment')->name('WomenEmpowerment');
-    Route::get('WomenEmpowerment', 'ActivitiesController@WomenEmpowerment')->name('WomenEmpowerment');
+    Route::get('AwarnessRaising', 'ActivitiesController@awarnessRaising')->name('AwarnessRaising');
+    Route::get('WomenEmpowerment', 'ActivitiesController@womenEmpowerment')->name('WomenEmpowerment');
 
     Route::get('user/login', 'UserController@index')->name('userLogin');
     Route::post('user/home', 'UserController@loign')->name('user.login');

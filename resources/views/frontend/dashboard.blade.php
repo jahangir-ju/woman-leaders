@@ -30,10 +30,12 @@
                     </div>
                   <hr>
                   @endforeach
-                   {{ $blogView->links() }} 
-            </article> 
+                   
+            </article>
+
 
       </div>
+
 
   
    
