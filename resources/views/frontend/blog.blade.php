@@ -14,22 +14,26 @@
                       <h3>{{  $category->name }}</h3></div>
 
                       @foreach($category->blogs as $blog)
-                          <div class="row">
-                              <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
-                                  <div class="post-type post-img">
-                                      <a href=""><img class="pt-4" src="{{asset('Frontend/images/news.JPG')}}" class="img-responsive" alt="image post"></a>
+
+                              <div class="row">
+                                  <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                      <div class="post-type post-img">
+                                       @if(!blank($blog->picture))
+                                          <a class="pt-4" href=""><img src="{{asset(Storage::disk('local')->url($blog->picture))}}" class="img-responsive" alt="image blog"></a>
+                                        @else
+                                        <a class="mt-4" href=""><img src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image blog"></a>
+                                        @endif
+                                      </div>
+                                  
                                   </div>
-                              
-                              </div>
-                              <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
-                                  <div class="caption">
-                                      <h3 class="md-heading"><a href="{{route('view_blog',$blog->id)}}">{{$blog->title}}</a></h3>
-                                      <p>{{ $blog->short_content  }}</p>
-                                      <a class="btn btn-default" href="#" role="button">Read More</a>
+                                  <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                      <div class="caption">
+                                          <h3 class="md-heading"><a href="{{route('view_blog',$blog->id)}}">{{$blog->title}}</a></h3>
+                                          <p>{!!$blog->short_content!!}</p>
+                                          <a  href="{{route('view_blog',$blog->id)}}">Read More</a> </div>
                                   </div>
                               </div>
-                            </div>
-                            <hr>
+                              <hr>
                           @endforeach
                     </article>
                 @endforeach
@@ -41,50 +45,7 @@
       <!---------Left Module start------>
       <div class="col-md-4">
 
-        <div class="moduletable">
-    
-          <h3>Category</span> </h3>
-          
-          <div class="module-body">
-            <div class="custom">
-              <ul>
-
-                 <?php 
-                        $category =DB::table('categories')->
-                    get();
-                        foreach ($category as $v_category){?>
-                    <li><a href="{{ route('blog_by_category', $v_category->id) }}">{{$v_category->name}}</a></li>  
-                   
-                  <?php }?>
-                           
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-        <div class="moduletable">
-    
-          <h3>Archives</span> </h3>
-          
-          <div class="module-body">
-            <div class="custom">
-              <ul>
-                <li><a href=""> January </a></li>
-                <li><a href=""> February </a></li>
-                <li><a href=""> March </a></li>
-                <li><a href=""> April </a></li>
-                <li><a href=""> May </a></li>
-                <li><a href=""> June </a></li>
-                <li><a href=""> July </a></li>
-                <li><a href=""> September </a></li>
-                <li><a href=""> October </a></li>
-                <li><a href=""> November </a></li>
-                <li><a href=""> December </a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
+        @include('frontend.helper.rightslide');
 
       </div><!---------Left Module start------>
 

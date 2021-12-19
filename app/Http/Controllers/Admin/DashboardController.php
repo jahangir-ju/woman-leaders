@@ -6,11 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use Session;
+use App\Admin;
 
 class DashboardController extends Controller
 {
     public function index(){
-        return view('admin/login');
+        return view('admin.login');
     }
 
 
@@ -20,25 +21,26 @@ class DashboardController extends Controller
             $email =  $request->admin_email;
             $password = $request->password;
 
-            $result = DB::table('admins')
-            ->where('email', $email)
+            $result = Admin::where('email', $email)
             ->where('password',$password)
             ->first(); 
 
             if($result){
             Session::put('name',$result->name);
             Session::put('id',$result->id);
-            //return Redirect::to('/dashboard');
-            return 'login';
+            return view('admin.layout');
+           
         }
         else{
             Session::put('message','Email or Password Invalid');
-            return 'Not login';
-            //return Redirect::to('/admin');
+            //return 'Not login';
+            return Redirect()->back();
         } 
        
     }
-    public function dashboard(){
-        return view('admin.layout');
+    public function logout(Request $request){
+        $request->session()->flush();
+        return redirect()->route('login');
     }
+
 }

@@ -13,9 +13,10 @@
           <div class="row-sm-6 col-md-6">
             <p>{{$eventdescription->eventName}}</p>
                <ul>
-                 <li>Date : {{$eventdescription->date}}</li>
-                 <li>Time : {{$eventdescription->time}}</li>
-                 <li>Locaion : {{$eventdescription->location}}</li>
+                 <li><span style="font-size: 20px; color:red;">Date : {{$eventdescription->DateFormat}}</span> </li>
+                 <li><span style="font-size: 20px; color:red;">Time : {{$eventdescription->TimeFormat}}</span> </li>
+                 <li><span style="font-size: 20px; color:red;">Locaion : {{$eventdescription->location}}</span> </li>
+               
                  
                </ul>
               
@@ -25,7 +26,7 @@
         <hr style="height:2px;border-width:0;color:gray;background-color:#1cb588">
 
         <div class="description">
-          <p>{{$eventdescription->description}}</p>
+          <p>{!!$eventdescription->description!!}</p>
 
             <center><button><a href="{{route('event.register', $eventdescription->id)}}">Register Now</a></button></center>
         </div>
@@ -37,7 +38,13 @@
            <h2>Meet The Speaker</h2>
            <p>Take a look at our speaker scheduled for this event.</p>
                 <div class="card">
-                  <img src="{{asset(Storage::disk('local')->url($eventdescription->speakerImage))}}" alt="John" style="width:100%">
+
+                  @if(!blank($eventdescription->speakerImage))
+                    <img src="{{asset(Storage::disk('local')->url($eventdescription->speakerImage))}}" alt="John" style="width:100%">
+                  @else
+                      <img src="{{asset('Frontend/images/avator.png')}}" alt="John" style="width:100%">
+                  @endif
+
                   <h1>{{$eventdescription->speaker}}</h1>
                   <p>{{$eventdescription->speakerDesignation  }}</p>
                   <p>{{$eventdescription->speakerInstitute}}</p>

@@ -92,13 +92,13 @@ class EventController extends Controller
     }
        public function edit($id)
     {
-         return "edit";
-       // $blog_edit = event::where('id', $id)->first();
-       //  return view('admin.event.update', compact('event_edit'));
+         
+        $eventEdit = event::where('id', $id)->first();
+         return view('admin.event.update', compact('eventEdit'));
     }
         public function update(Request $request, $id)
     {
-      return "update";
+      return $id;
     }
 
 

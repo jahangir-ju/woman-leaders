@@ -11,15 +11,28 @@
       <div class="row">
 
         @foreach($events as $event)
-        <div class="row-sm-6 col-md-4 my-3">
-          <img src="{{asset(Storage::disk('local')->url($event->eventImage))}}" class="img-fluid rounded" alt="picture">
-          {{-- <p>Date:{{$event->date}}</p> --}}
-          <p class="my-3" ><a href="{{route('event.description',$event->id)}}"> {{$event->eventName}}</a></p>
-            <div class="urlbutton">
-              <a href="{{route('event.register', $event->id)}}"> Register </a>
-            </div>
-        </div>
-       @endforeach
+          <div class="row-sm-6 col-md-4 my-3">
+            <img src="{{asset(Storage::disk('local')->url($event->eventImage))}}" class="img-fluid rounded" alt="picture">
+
+
+            <p class="my-3" >
+              <div class="row">
+                <div class="Eventdate col-md-2">
+                     {{$event->CustomDate}}                 
+                </div>
+                <div class="col-md-10">
+                  <a href="{{route('event.description',$event->id)}}"> {{$event->eventName}} </a>
+                  
+                </div>
+              </div>                
+
+            </p>
+
+              <div class="urlbutton">
+                <a href="{{route('event.register', $event->id)}}"> Register </a>
+              </div>
+          </div>
+        @endforeach
          
        
         

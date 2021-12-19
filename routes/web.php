@@ -1,5 +1,6 @@
 <?php
-
+use App\User;
+use Illuminate\Support\Facades\Auth; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,19 +12,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend/dashboard');
-});
+Route::get('/verify/{hash}', function ($hash) {
+    $id = decrypt($hash);
+
+    $user = User::find($id);
+    if(!blank($user)) {
+        $user->email_verified_at = now();
+        $user->save();
+
+        Auth::login($user);
+
+        return redirect('/');
+    }
+
+})->name('verify.hash');
 
 
 Route::group(['namespace' => 'Frontend'], function () {
 
-    Route::get('/team', 'TeamController@index')->name('team');
-    Route::get('/about', 'AboutController@index')->name('about');
-    Route::get('/contact', 'ContactController@index')->name('contact');
-    Route::get('/photo', 'GalleryController@photo')->name('photo');
-    Route::get('/video', 'GalleryController@video')->name('video');
-    Route::get('/news', 'NewsController@index')->name('news');
+    Route::get('home', 'HomepageController@index')->name('home');
+    Route::get('team', 'TeamController@index')->name('team');
+    Route::get('about', 'AboutController@index')->name('about');
+    Route::get('contact', 'ContactController@index')->name('contact');
+    Route::get('photo', 'GalleryController@photo')->name('photo');
+    Route::get('video', 'GalleryController@video')->name('video');
+    
+    Route::get('news', 'NewsController@index')->name('news');
     Route::get('news/details/{id}', 'NewsController@newsDetails')->name('newsDetails');
 
     Route::get('events', 'EventController@event')->name('events');
@@ -36,18 +50,38 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('blog/category/{id}', 'BlogController@blog_by_category')->name('blog_by_category');
     Route::get('blog/details/{id}', 'BlogController@view_blog')->name('view_blog');
 
+    Route::get('peacePromoting', 'ActivitiesController@peacePromoting')->name('peacePromoting');
+    Route::get('skillLeadership', 'ActivitiesController@skillLeadership')->name('skillLeadership');
+    Route::get('publications', 'ActivitiesController@publications')->name('publications');
+    Route::get('AwarnessRaising', 'ActivitiesController@AwarnessRaising')->name('AwarnessRaising');
+    Route::get('WomenEmpowerment', 'ActivitiesController@WomenEmpowerment')->name('WomenEmpowerment');
+    Route::get('WomenEmpowerment', 'ActivitiesController@WomenEmpowerment')->name('WomenEmpowerment');
+
+    Route::get('user/login', 'UserController@index')->name('userLogin');
+    Route::post('user/home', 'UserController@loign')->name('user.login');
+    Route::get('user/logout', 'UserController@logout')->name('user.logout');
+
+
+    Route::get('user/register', 'UserController@register')->name('userRegister');
+    
+   
+
+    Route::get('user/profile', 'ProfileController@index')->name('user.profile');
+    Route::get('user/blog', 'ProfileController@blog')->name('userBlog');
+    Route::post('user/blog/create', 'ProfileController@userBlogCreate')->name('user.blog.create');
+
 });
 
 
 
+   Route::get('login', 'Admin\DashboardController@index')->name('login');
+    Route::post('admin/dashboard', 'Admin\DashboardController@login')->name('admin-login');
+    Route::get('admin/logout', 'Admin\DashboardController@logout')->name('admin.logout');
 
 
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin', 'middleware' => 'login' ], function () {
 
-    //Route::get('/login', 'DashboardController@index');
-    //Route::post('dashboard', 'DashboardController@login')->name('admin-login');
-    Route::get('/dashboard', 'DashboardController@dashboard');
-
+ 
     Route::get('blog', 'BlogController@index')->name('blog.index');
     Route::get('blog/create', 'BlogController@create')->name('blog.create');
     Route::post('blog/save', 'BlogController@save')->name('blog.save');

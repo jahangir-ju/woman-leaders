@@ -20,15 +20,13 @@
                
                 </tr>
               </thead>
-         
-              
           <tbody>
             @foreach($blog as $blogs)
           
                 <tr>
                   <td>{{$loop->index+1}}</td>
                   <td>{{$blogs->title}}</td>
-                  <td>{{$blogs->category_id}}</td>
+                  <td>{{$blogs->category->name}}</td>
                   <td>{{$blogs->post_view}}</td>
                     <td>
                       @if($blogs->status==1)
@@ -42,8 +40,6 @@
                           <a href="{{route('blog.edit',$blogs->id)}}" class="btn btn-primary btn-sm">edit</a>
                           <a href="{{route('blog.view',$blogs->id)}}" class="btn btn-success btn-sm">view</a>
                                     
-                      
-                        
                                
                         <form method="post" class="delete_form" action="{{route('blog.destroy',$blogs->id)}}"> @csrf
                           <button type="submit" onclick="" class="btn btn-danger btn-sm">Delete</button>

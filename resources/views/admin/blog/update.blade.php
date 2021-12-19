@@ -4,13 +4,13 @@
   <div class="col-12 col-lg-8 grid-margin">
       <div class="card">
           <div class="card-body">
-              <h2 class="card-title">Update Information form</h2>
-
-              <form action="{{route('blog.update',$blog_edit->id)}}"  class="forms-sample" enctype="multipart/form-data" method="post">@csrf
+              <h2 class="card-title">Update Information</h2>
+               @include('component.error')
+              <form action="{{route('blog.update',$blogEdit->id)}}"  class="forms-sample" enctype="multipart/form-data" method="post">@csrf
                   <div class="form-group row">
                       <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Blog Title</label>
                       <div class="col-sm-9">
-                        <input type="text" name="title_blog" class="form-control p-input" id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="">
+                        <input type="text" value="{{ $blogEdit->title }}" name="title_blog" class="form-control p-input" id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="">
                       </div>
                       
                   </div>
@@ -19,43 +19,53 @@
                       <div class="col-sm-9">
 
                          <select class="form-control" name="category_blog">
-                            <option value="1">
-                                category 1
+                            <option value="{{ $blogEdit->category_id }} ">
+                                {{ $blogEdit->category->name }}
                              </option>
-                            <option value="2">
-                                 category 1
-                            </option>
+                               <?php 
+                                      $category =DB::table('categories')->
+                                  get();
+                                      foreach ($category as $v_category){?>
+                                  <option value="{{$v_category->id}}">
+                                      {{$v_category->name}}
+                                  </option>
+                                <?php }?>
+                         
             
                         </select>
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">User Name</label>
+                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Author Name</label>
                       <div class="col-sm-9">
-                        <input type="text" name="user_id" value="10"  class="form-control p-input" id="exampleInputPassword2">
+                        <input type="text" name="author" value="{{ $blogEdit->author }}"  class="form-control p-input" id="exampleInputPassword2">
                       </div>
                   </div>
               
                   <div class="form-group row">
                       <label for="exampleTextarea2" class="col-sm-3 col-form-label">Write Blog</label>
                       <div class="col-sm-9">
-                        <textarea class="form-control p-input" name="content" id="exampleTextarea2" rows="15"></textarea>
+                        <textarea id="summernoteExample" name="content">{{ $blogEdit->content }}</textarea>
                       </div>
                   </div>
+
+                  @if($blogEdit->status ==1)
+
                   <div class="form-group row">
                       <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Status</label>
                       <div class="col-sm-9">
-                        <input id="inlineCheckbox1" name="status" type="checkbox" value="1">Publish
+                        <input id="inlineCheckbox1" name="status" value="1" checked="" type="checkbox">Publish
                       </div>
                   </div>
-                  <div class="form-group row mb-4">
-                      <label class="col-sm-3 col-form-label">Upload file</label>
+                  @else
+                    <div class="form-group row">
+                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Status</label>
                       <div class="col-sm-9">
-                        <label for="exampleInputFile" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Browse</label>
-                        <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp2">
+                        <input id="inlineCheckbox1" name="status" value="1" type="checkbox">Publish
                       </div>
-                      <small id="fileHelp2" class="form-text text-muted ml-3">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                   </div>
+                  @endif
+
 
 
                   <button type="submit" class="btn btn-success mt-4">Submit</button>

@@ -22,9 +22,9 @@ class CreateEventsTable extends Migration
             $table->string('speaker');
             $table->string('speakerDesignation');
             $table->string('speakerInstitute');
-            $table->string('speakerImage');
+            $table->string('speakerImage')->nullable();
             $table->longText('description');
-            $table->string('eventImage');
+            $table->string('eventImage')->nullable();
             $table->string('status');
             $table->timestamps();
         });

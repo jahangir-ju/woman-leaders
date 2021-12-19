@@ -6,11 +6,17 @@
     @foreach($news1 as $news)
       <div class="col-6 col-md-4">
           <div class="card">
+             @if(!blank($news->file))
 
-            <img class="card-img-top" src="{{asset(Storage::disk('local')->url($news->file))}}" alt="Card image cap" style="height:300px;">
+        <img class="card-img-top"src="{{asset(Storage::disk('local')->url($news->file))}}" alt="news image" style="height:300px;">
+        @else
+        <img class="card-img-top" src="{{asset('Frontend/images/default.jpg')}}" alt="news image" style="height:300px;">
+        @endif
+
+           
             <div class="card-body">
               <h2 class="card-title"><a href="{{ route('news.view',$news->id) }}">{{$news->title}}</a></h2>
-              <h5 class="card-title">{{$news->created_at}}</h5>
+              <h5 class="card-title">{{$news->CustomDate}}</h5>
             </div>
           </div>
       </div>

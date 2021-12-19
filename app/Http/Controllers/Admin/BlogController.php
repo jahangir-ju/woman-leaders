@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function index(){
 
-         $blog = blog::all();
+         $blog = Blog::all();
         return view("admin.blog.manage", compact('blog'));
     }
 
@@ -29,6 +29,7 @@ class BlogController extends Controller
             'author'         => 'required',
             'content'        => 'required',
             'status'         => 'required',
+            'pictureCaption'         => 'required',
             'file'           => 'required',
           
 
@@ -38,12 +39,13 @@ class BlogController extends Controller
             $imageName = $request->file->store('public');
         }
 
-        $data                = new blog;
+        $data                = new Blog;
         $data->title         = $request->title_blog;
         $data->category_id   = $request->category_blog;
         $data->author       = $request->author;
         $data->content       = $request->content;
         $data->status        = $request->status;
+        $data->pictureCaption        = $request->pictureCaption;
         $data->picture       = $imageName;
 
     //dd($data);
@@ -55,7 +57,7 @@ class BlogController extends Controller
      public function unactive($id)
     {
         
-        blog::where('id', $id)
+        Blog::where('id', $id)
             ->update(['status' => 0]);
 
         return redirect()->back();
@@ -71,24 +73,46 @@ class BlogController extends Controller
       public function destroy(Request $request, $id)
 
     {
-        $request = blog::find($id);
+        $request = Blog::find($id);
         $request->delete();
         return redirect()->back()->with('message', 'blog delete successfully');
      
     }
       public function view($id)
     {
-        $view = blog::find($id);
+        $view = Blog::find($id);
        return view('admin.blog.view', compact('view'));
     }
        public function edit($id)
     {
-       $blog_edit = blog::where('id', $id)->first();
-        return view('admin.blog.update', compact('blog_edit'));
+       $blogEdit = Blog::where('id', $id)->first();
+
+        return view('admin.blog.update', compact('blogEdit'));
     }
-        public function update(Request $request, $id)
+       public function update(Request $request, $id)
     {
-      return "update";
+        
+
+         $validateData = $request->validate([
+            
+            'title_blog'    => 'required',
+            'category_blog' => 'required',
+            'author'        => 'required',
+            'content'       => 'required',
+            'status'        => 'required',
+
+        ]);
+        $data = Blog::find($id);
+
+        $data->title        = $request->title_blog;
+        $data->category_id    = $request->category_blog;
+        $data->author       = $request->author;
+        $data->content         = $request->content;
+        $data->status           = $request->status;
+        $data->save();
+        //Session::flash('message', 'Update Information successfully');
+         return redirect()->route('blog.index');
+   
     }
 
 

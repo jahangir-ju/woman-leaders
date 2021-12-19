@@ -6,42 +6,32 @@
       <!------------Blog post Modul start-------------->
       <div class="col-md-8">
 
-        <h2>Recent</h2>
+        <h4>Recent blog</h>
             
            <article class="post vt-post">
-           
+              @foreach($blogView as $v_blogView)
                   <div class="row">
                       <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
                           <div class="post-type post-img">
-                              <a href="#"><img src="{{asset('Frontend/images/news.JPG')}}" class="img-responsive" alt="image post"></a>
+                            @if(!blank($v_blogView->picture))
+                              <a href="#"><img src="{{asset(Storage::disk('local')->url($v_blogView->picture))}}" class="img-responsive" alt="image post"></a>
+                              @else
+                               <a href="#"><img src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post"></a>
+                               @endif
                           </div>
                       
                       </div>
                       <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
                           <div class="caption">
-                              <h3 class="md-heading"><a href="#">The Heading Text Size Should Match</a></h3>
-                              <p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                              <a class="btn btn-default" href="#" role="button">Read More</a> </div>
+                              <h3 class="md-heading"><a href="{{ route('view_blog',$v_blogView->id) }}">{{ $v_blogView->title }}</a></h3>
+                              <p>{!! $v_blogView->short_content !!} </p>
+                              <a class="btn btn-default" href="{{ route('view_blog',$v_blogView->id) }}" role="button">Read More</a> </div>
                       </div>
-                  </div>
+                    </div>
                   <hr>
-                   <div class="row">
-                      <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
-                          <div class="post-type post-img">
-                              <a href="#"><img src="{{asset('Frontend/images/b.JPG')}}" class="img-responsive" alt="image post"></a>
-                          </div>
-                      
-                      </div>
-                      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
-                          <div class="caption">
-                              <h3 class="md-heading"><a href="#">The Heading Text Size Should Match</a></h3>
-                              <p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                              <a class="btn btn-default" href="#" role="button">Read More</a> </div>
-                      </div>
-                  </div>
-
-            </article>   
-
+                  @endforeach
+                   {{ $blogView->links() }} 
+            </article> 
 
       </div>
 
@@ -50,50 +40,11 @@
       <!------------Blog post Modul start-------------->
       <!---------Left Module start------>
       <div class="col-md-4">
-
-        <div class="moduletable">
-    
-          <h3>Category</span> </h3>
-          
-          <div class="module-body">
-            <div class="custom">
-              <ul>
-                <li><a href="">Leadership</a></li>
-                <li><a href="">Community</a></li>
-                <li><a href="">Communication</a></li>
-                <li><a href="">Life Balance</a></li>
-                <li><a href="">Women in the World</a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-        <div class="moduletable">
-    
-          <h3>Archives</span> </h3>
-          
-          <div class="module-body">
-            <div class="custom">
-              <ul>
-                <li><a href=""> January </a></li>
-                <li><a href=""> Feburary </a></li>
-                <li><a href=""> March </a></li>
-                <li><a href=""> April </a></li>
-                <li><a href=""> May </a></li>
-                <li><a href=""> June </a></li>
-                <li><a href=""> July </a></li>
-                <li><a href=""> Augest </a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
+        @include('frontend.helper.rightslide');
 
       </div><!---------Left Module start------>
 
         <div class="clearfix"></div>
     </div>
-
-  
 
   @endsection()

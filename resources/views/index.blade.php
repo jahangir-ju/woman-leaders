@@ -4,7 +4,7 @@
 <title>Women leaders</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{asset('Frontend/css/social.css')}}">
+<link rel="stylesheet" href="{{asset('Frontend/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('Frontend/css/nav.css')}}">
 <link rel="stylesheet" href="{{asset('Frontend/css/post.css')}}">
 
@@ -26,6 +26,24 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
                     </li>
+
+                    @if(session('user_id'))
+                     <li class="nav-item">
+                      <a class="nav-link" href="{{ route('user.profile') }}"> {{ session('user_name') }}</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="{{ route('user.logout') }}"> Logout</a>
+                    </li>
+                    @else
+                     <li class="nav-item">
+                      <a class="nav-link" href="{{route('userLogin')}}">User Login</a>
+                    </li>
+                    @endif
+
+
+
+
+
                   
                   </ul>
             </div> <!----------------End Top navbar--------------->
@@ -42,14 +60,25 @@
           </div>
         </div>
     </div>
-    <div class="Blog-tilte">
-      <div class="logo"></div>
-      <img src="images/blog_logo.png" height="50px" width="50px">
-      <div class="title">
-            <h1>Women leaders</h1>
-        </div>
 
+  <div class="Blog-tilte">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="logo-area">
+                <img src="{{ asset('Frontend/images/logo.png') }}">
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="title-area">
+              <h1>Women leaders</h1>
+              <p> Do not be afraid to make decisions</p>
+            </div>
+          </div>
+        </div>
     </div>
+  </div>
 
     <!----------------Start Inner  nav bar --------------->
 

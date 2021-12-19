@@ -26,7 +26,7 @@
                 <tr>
                   <td>{{$loop->index+1}}</td>
                   <td>{{$news0->title}}</td>
-                  <td>{{$news0->category}}</td>
+                  <td>{{$news0->category->name}}</td>
                   <td>
                     
                     @if($news0->status==1)

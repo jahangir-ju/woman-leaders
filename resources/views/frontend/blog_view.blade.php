@@ -4,18 +4,54 @@
 <div class="row">
   <div class="col-12 col-md-8">
     <div class="blog-content">
-        <img src="{{asset('Frontend/images/b.JPG')}}" alt="Notebook" style="width:100%">
-        <h2>{{ $blog_details->title }}</h2>
-        <p>{{ $blog_details->content }}</p>
+            <figure>
+              @if(!blank($blogDetails->picture))
+                <img class="pt-4" src="{{asset(Storage::disk('local')->url($blogDetails->picture))}}" class="img-responsive" alt="image post" style="width: 100%; height: 60%;">
+                <figcaption>{{ $blogDetails->pictureCaption }}</figcaption>
+                @else
+                <img class="pt-4" src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="width: 100%; height: 60%;">
+
+                @endif
+
+                  
+            </figure>
+        
+        <h2>{{ $blogDetails->title }}</h2>
+        <p>{!! $blogDetails->content !!}</p>
     </div>
   </div>
 
-    <div class="col-6 col-md-4">
-      <div class="right-content">
-          <h2>Very New News!</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+
+      <div class="col-6 col-md-4">
+        <div class="right_header">
+          <p class="pt-5">Similar  Blog</p>
+        </div>
+         @foreach($relatedblog as $v_relateblog)
+            <div class="right-content">
+                 
+                      <div class="row">
+                        <div class="col-6 col-md-8">
+                          <h5><a href="{{ route('view_blog', $v_relateblog->id) }}" >{{ $v_relateblog->title }}</a></h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          
+                          @if(!blank($v_relateblog->picture))
+                          <img class="pt-4" src="{{asset(Storage::disk('local')->url($v_relateblog->picture))}}" class="img-responsive" alt="image post" style="height: 80%; width:100%">
+                            
+                              @else
+                              <img class="pt-4" src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="height: 80%; width:100%">
+
+                              @endif
+
+                        </div>
+                      </div>
+                <hr>              
+            </div>
+          @endforeach
       </div>
-    </div>
+
+
 </div>
 
 @endsection()

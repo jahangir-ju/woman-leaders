@@ -9,11 +9,9 @@
         <link href="{{asset('backend/node_modules/mdi/css/materialdesignicons.min.css')}}" rel="stylesheet">
         <link href="{{asset('backend/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
         <link href="{{asset('backend/node_modules/rickshaw/rickshaw.min.css')}}" rel="stylesheet"/>
+        <link href="{{ asset('backend/node_modules/summernote/dist/summernote-bs4.css') }}" rel="stylesheet">
         <link href="{{asset('backend/css/chartist.min.css')}}" rel="stylesheet"/>
         <link href="{{asset('backend/css/style.css')}}" rel="stylesheet">
-    </link>
-</link>
-</link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </meta>
 </meta>
@@ -127,7 +125,7 @@
         </form>
         <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item dropdown">
-                <a class="btn btn-secondary" href="">
+                <a class="btn btn-secondary" href="{{ route('admin.logout') }}">
                     Logout
                 </a>
             </li>
@@ -151,7 +149,7 @@
                 </div>
                 <div class="details">
                     <p class="user-name">
-                        Jahangir
+                        {{ session('name') }}
                      
                     </p>
                     <p class="designation">
@@ -285,6 +283,12 @@
   <script src="{{asset('backend/node_modules/inputmask/dist/inputmask/phone-codes/phone-be.js')}}"></script>
   <script src="{{asset('backend/node_modules/inputmask/dist/inputmask/phone-codes/phone-ru.js')}}"></script>
   <script src="{{asset('backend/node_modules/inputmask/dist/inputmask/bindings/inputmask.binding.js')}}"></script>
+    <script src="{{ asset('backend/node_modules/summernote/dist/summernote-bs4.min.js')}}"></script>
+    <script src="{{ asset('backend/js/editorDemo.js') }}"></script>
+    <script src="{{ asset('backend/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('backend/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('backend/js/misc.js') }}"></script>
+    <script src="{{ asset('backend/js/settings.js') }}"></script>
 
 </body>
 </html>

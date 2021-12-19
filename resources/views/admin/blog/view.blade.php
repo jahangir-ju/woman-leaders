@@ -6,12 +6,16 @@
   <div class="col-12 col-md-8">
     <div class="blog-content">
 
-        <img src="{{asset(Storage::disk('local')->url($view->picture))}}" alt="Notebook" style="height:30%; width:100%;">
-        <h2>{{$view->title}}</h2>
-        <h4>{{$view->category_id}}</h4>
-        <h5>Publication date : {{$view->created_at}}</h5>
+         @if(!blank($view->picture))
+        <img src="{{asset(Storage::disk('local')->url($view->picture))}}" alt="Blog Picture" style="height:30%; width:100%;">
+        @else
+        <img src="{{ asset('Frontend/images/default.jpg') }}" alt="Blog Picture" style="height:30%; width:100%;">
+        @endif
+        <h2 class="pt-5">{{$view->title}}</h2>
+        <h4><span style="color: red;">{{$view->category->name}}</span></h4>
+        <h5> <span style="color: red;">Publication date : {{$view->CustomDate}}</span></h5>
 
-        <p>{{$view->content}}</p>
+        <p>{!! $view->content !!}</p>
        
     </div>
   </div>

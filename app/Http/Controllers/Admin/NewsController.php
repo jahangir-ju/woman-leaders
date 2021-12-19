@@ -22,12 +22,13 @@ class NewsController extends Controller
     }
      public function save(Request $request){
 
-          $validateData = $request->validate([
-            'title'     => 'required',
-            'category'     => 'required',
-            'content'     => 'required',
-            'file'     => 'required',
-            'status'   => 'required',
+          $validateData      = $request->validate([
+            'title'          => 'required',
+            'category'       => 'required',
+            'content'        => 'required',
+            'file'           => 'required',
+            'pictureCaption' => 'required',
+            'status'         => 'required',
         ]);
        
 
@@ -36,13 +37,15 @@ class NewsController extends Controller
           $imageName = $request->file->store('public');
         }
 
-        $data               = new news;
-        $data->title        = $request->title;
-        $data->category     = $request->category;
-        $data->content      = $request->content;
-        $data->status       =$request->status;
-        $data->file         = $imageName;
+        $data                   = new news;
+        $data->title            = $request->title;
+        $data->category_id      = $request->category;
+        $data->content          = $request->content;
+        $data->status           =$request->status;
+        $data->pictureCaption   =$request->pictureCaption;
+        $data->file             = $imageName;
 
+        // dd($data);
         $data->save();
         return redirect('/news/create')->with('status', 'store');;
     }
@@ -82,7 +85,6 @@ class NewsController extends Controller
     }
        public function update(Request $request, $id){
 
-        return 'dkljfsdlhf';
           $validateData = $request->validate([
             'title'     => 'required',
             'category'  => 'required',
@@ -95,13 +97,13 @@ class NewsController extends Controller
 
    
         $data->title        = $request->title;
-        $data->category     = $request->category;
+        $data->category_id  = $request->category;
         $data->content      = $request->content;
         $data->status       = $request->status;
-        dd($data);
+        // dd($data);
 
-        //$data->save();
-        //return redirect('/news/create')->with('status', 'store');;
+        $data->save();
+        return redirect('/news/create')->with('status', 'updated new successfully');;
     }
 
 

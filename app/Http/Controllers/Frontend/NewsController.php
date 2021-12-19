@@ -14,6 +14,7 @@ class NewsController extends Controller
     }
     public function newsDetails($id){
         $news_details = news::find($id);
-        return view('frontend/news_view',compact('news_details'));
+        $relatedNews = news::all();
+        return view('frontend/news_view',compact('news_details','relatedNews'));
     }
 }

@@ -4,22 +4,7 @@
       <div class="card">
           <div class="card-body">
               <h2 class="card-title">Event create</h2>
-                 @if ($errors->any())
-                      <div class="alert alert-danger">
-                          <ul>
-                              @foreach ($errors->all() as $error)
-                                  <li>{{ $error }}</li>
-                              @endforeach
-                          </ul>
-                      </div>
-                  @endif
-                  <p>
-                      @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                  </p>
+                @include('component.error')
 
               <form action="{{route('event.save')}}"  class="forms-sample" enctype="multipart/form-data" method="post">@csrf
                   <div class="form-group row">
@@ -82,7 +67,8 @@
                   <div class="form-group row">
                       <label for="exampleTextarea2" class="col-sm-3 col-form-label">Event Description </label>
                       <div class="col-sm-9">
-                        <textarea class="form-control p-input" name="description" id="exampleTextarea2" rows="15"></textarea>
+                         <textarea id="summernoteExample" name="description"></textarea>
+                      
                       </div>
                   </div>
                   <div class="form-group row">

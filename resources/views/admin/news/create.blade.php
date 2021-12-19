@@ -4,24 +4,8 @@
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">Input from</h2>
-              @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-            <p>
-                @if (session('status'))
-                  <div class="alert alert-success">
-                      {{ session('status') }}
-                  </div>
-              @endif
-            </p>
+            @include('component.error')
             
-
             <form action="{{route('news.save')}}"  class="forms-sample" enctype="multipart/form-data" method="post">@csrf
                 <div class="form-group row">
                     <label for="exampleInputEmail2" class="col-sm-3 col-form-label">News Title</label>
@@ -55,7 +39,7 @@
                 <div class="form-group row">
                     <label for="exampleTextarea2" class="col-sm-3 col-form-label">Write News</label>
                     <div class="col-sm-9">
-                      <textarea class="form-control p-input" name="content" id="exampleTextarea2" rows="15"></textarea>
+                      <textarea id="summernoteExample" name="content"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -65,10 +49,16 @@
                     </div>
                 </div>
                 <div class="form-group row mb-4">
-                    <label class="col-sm-3 col-form-label">Upload file</label>
+                    <label class="col-sm-3 col-form-label">Upload Picture</label>
                     <div class="col-sm-9">
-                      <label for="exampleInputFile" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Browse</label>
-                      <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp2">
+                      <input type="file" id="files" name="file">
+                    </div>
+                    
+                </div>
+                    <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Picture Caption</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="pictureCaption" class="form-control p-input" id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="">
                     </div>
                     
                 </div>

@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function photo(){
-        return view("frontend/photo");
+        return view("frontend/gallary/photo");
     }
     
     public function video(){
-        return view("frontend/video");
+        return view("frontend/gallary/video");
     }
 }
