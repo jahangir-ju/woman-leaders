@@ -62,6 +62,7 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 
     Route::get('user/register', 'UserController@register')->name('userRegister');
+    Route::post('user/save', 'UserController@save')->name('user.save');
        
 
     Route::get('user/profile', 'ProfileController@index')->name('user.profile');

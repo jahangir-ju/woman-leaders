@@ -27,9 +27,9 @@
                       <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
                     </li>
 
-                    @if(session('user_id'))
+                    @if(session('id'))
                      <li class="nav-item">
-                      <a class="nav-link" href="{{ route('user.profile') }}"> {{ session('user_name') }}</a>
+                      <a class="nav-link" href="{{ route('user.profile') }}"> {{ session('name') }}</a>
                     </li>
                      <li class="nav-item">
                       <a class="nav-link" href="{{ route('user.logout') }}"> Logout</a>
@@ -40,11 +40,6 @@
                     </li>
                     @endif
 
-
-
-
-
-                  
                   </ul>
             </div> <!----------------End Top navbar--------------->
               

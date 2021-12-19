@@ -11,7 +11,7 @@
 
       <div class="profileBody">
         <img src="{{ asset('Frontend/images/profile.png') }}">
-        <p>{{ session('user_name') }}</p>
+        <p>{{ session('name') }}</p>
       </div>
 
 @include('component.error')
@@ -29,7 +29,7 @@
                     <div class="form-group row">
                       <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Author Name</label>
                       <div class="col-sm-9">
-                        <input type="text" name="author" value="{{ session('user_name') }}"   class="form-control p-input" disabled="">
+                        <input type="text" name="author" value="{{ session('name') }}"   class="form-control p-input" disabled="">
                       </div>
                   </div>
 

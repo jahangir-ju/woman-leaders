@@ -18,7 +18,7 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel">
                                 <h3 class="register-heading">Apply as a Employee</h3>
 
-                                <form action="{{ route('user.create') }}" method="post"> @csrf
+                                <form action="{{ route('user.save') }}" method="post"> @csrf
 	                                <div class="row register-form">
 	                                    <div class="col-md-6">
 	                                        <div class="form-group">
