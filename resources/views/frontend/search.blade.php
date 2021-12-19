@@ -7,8 +7,9 @@
         <div class="temp2">
             <h2>Search Result</h2>
         </div>
-            
+              @if(!blank($searchBlogs))
              <article class="post vt-post">
+
                 @foreach($searchBlogs as $searchBlog)
                   <div class="row">
                       <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
@@ -32,6 +33,14 @@
                   @endforeach
              
             </article>
+            @else
+            <article>
+              <center><h1>No blog found</h1></center>
+            </article>
+
+            @endif
+
+
       </div>   
       <!------------Blog post Modul start-------------->
         <div class="clearfix"></div>

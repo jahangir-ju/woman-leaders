@@ -66,6 +66,7 @@ Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('user/profile', 'ProfileController@index')->name('user.profile');
     Route::post('user/blog/create', 'ProfileController@userBlogCreate')->name('user.blog.create');
+    Route::get('user/blog/details/{id}', 'ProfileController@details')->name('blog.details');
 
 });
 

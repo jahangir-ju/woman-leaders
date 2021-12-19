@@ -43,6 +43,11 @@ class ProfileController extends Controller
         $data->save();
         return redirect()->back();
     }
+    public function details($id){
+        $userBlogDetails = Blog::find($id);
+        return view('frontend.user.details_blog',compact('userBlogDetails'));
     }
+
+}
 
  

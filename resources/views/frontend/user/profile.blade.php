@@ -96,7 +96,7 @@
         </div>
             
              <article class="post vt-post">
-            @foreach($userBlogs as $v_userBlog)
+              @foreach($userBlogs as $v_userBlog)
                   <div class="row">
                       <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
                           <div class="post-type post-img">
@@ -111,7 +111,7 @@
                           <div class="caption">
                               <h3 class="md-heading"><a href="">{{ $v_userBlog->title }}</a></h3>
                               <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
-                              <a  href="">Read More</a> </div>
+                              <a  href="{{ route('blog.details',$v_userBlog->id) }}">Read More</a> </div>
                       </div>
                   </div>
                   <hr> 
