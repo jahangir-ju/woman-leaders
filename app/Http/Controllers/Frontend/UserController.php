@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserVerify;
 use Session;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
         return view('frontend.user.register');
     }
 
-    public function create( Request $request){
+    public function save( Request $request){
         
         $request->validate([
             'name'      => 'required',
@@ -31,7 +32,7 @@ class UserController extends Controller
         
         $user                = new User;
         $user->name        = $request->name;
-        $user->password    = $request->password;
+        $user->password    = bcrypt($request->password);
         $user->gender      = $request->gender;
         $user->email       = $request->email;
         $user->phone       = $request->phone;
@@ -44,7 +45,7 @@ class UserController extends Controller
     }
     public function loign(Request $request){
 
-          $this->validate($request, [
+        $this->validate($request, [
             'user_email'    => 'required|email',
             'user_password' => 'required|min:8',
         ]);
@@ -52,27 +53,27 @@ class UserController extends Controller
         $email    = $request->user_email;
         $password = $request->user_password;
 
-        $result = User::where('email', $email)
-            ->where('password', $password)
-            ->first();
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
 
-        if ($result) {
+            if(!auth()->user()->email_verified_at) {
+                Auth::logout();
+                Session::flash('message', 'Email or Password Invalid');
+                return redirect()->route('userLogin');
+            }
 
-            Session::put('user_id', $result->id);
-            Session::put('user_name', $result->name);
-           // return "login";
+            Session::put('name',auth()->user()->name);
+            Session::put('id', auth()->id());
 
-             return redirect()->route('home');
+            return redirect(route('home'))->with('verified', true);
         } else {
 
             Session::flash('message', 'Email or Password Invalid');
-
             return Redirect()->back();
 
         }
     }
     public function logout(Request $request){
-        $request->session()->flush();
+        Auth::logout();
         return redirect()->route('userLogin');
     }
 }
