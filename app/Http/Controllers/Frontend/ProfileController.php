@@ -11,9 +11,8 @@ use Session;
 class ProfileController extends Controller
 {
     public function index(){
-        $id          = session('user_id');
-        //$profileinfo = Users::where('id', $id)->first();
-        $userBlogs   = Blog::where('id', $id)->get();
+        $id          = session('id');
+        $userBlogs   =Blog::where('user_id', $id)->get();
         return view('frontend.user.profile',compact('userBlogs'));
     }
 
@@ -33,19 +32,26 @@ class ProfileController extends Controller
         $data                   = new Blog;
         $data->title            = $request->title_blog;
         $data->category_id      = $request->category_blog;
-        $data->author           = Session::get('user_name');
+        $data->user_id          = Session::get('id');
         $data->content          = $request->content;
         $data->status           = 0;
         $data->pictureCaption   = $request->pictureCaption;
         $data->picture          = $imageName;
 
-        //dd($data);
         $data->save();
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Now waiting for admin approval to publish');
     }
     public function details($id){
         $userBlogDetails = Blog::find($id);
         return view('frontend.user.details_blog',compact('userBlogDetails'));
+    }
+       public function destroy(Request $destroy, $id)
+
+    {
+        $destroy = Blog::find($id);
+        $destroy->delete();
+        return redirect()->back()->with('message', 'blog delete successfully');
+     
     }
 
 }

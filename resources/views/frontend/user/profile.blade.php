@@ -10,11 +10,9 @@
 
 
       <div class="profileBody">
-        <img src="{{ asset('Frontend/images/profile.png') }}">
+        <img src="{{ asset('Frontend/images/profile.png') }}" style="height: 200px; width: 200px; border-radius:45%;">
         <p>{{ session('name') }}</p>
       </div>
-
-@include('component.error')
           <div class="temp2 pt-4">
             <h2 style="text-align:center">Write Your Blog</h2>
         </div>
@@ -27,7 +25,7 @@
 
               <form action="{{route('user.blog.create')}}"  class="forms-sample" enctype="multipart/form-data" method="post">@csrf
                     <div class="form-group row">
-                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Author Name</label>
+                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">User Name</label>
                       <div class="col-sm-9">
                         <input type="text" name="author" value="{{ session('name') }}"   class="form-control p-input" disabled="">
                       </div>
@@ -102,15 +100,22 @@
                           <div class="post-type post-img">
                          
                            
-                              <a href="#"><img src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post"></a>
-                        
+                              <a href="#"><img src="{{asset(Storage::disk('local')->url($v_userBlog->picture))}}" class="img-responsive" alt="image post"></a>
+                              @if($v_userBlog->status == 1)
+                                <p class="btn btn-success btn-sm" href="#" role="button">Published</p>
+                              @else
+                              <p>Post Published</p>
+                                <p class="btn btn-primary btn-sm" href="#" role="button">Pending</p>
+                              @endif
+                                
+                                <p class="btn btn-danger btn-sm" role="button"><a class="destroy" style="text-decoration: none;color: white;" href="{{ route('user.blog.destroy',$v_userBlog->id) }}" onclick="return confirm('Are you sure?')">Delete</a></p>
                           </div>
                       
                       </div>
                       <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
                           <div class="caption">
-                              <h3 class="md-heading"><a href="">{{ $v_userBlog->title }}</a></h3>
-                              <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
+                              <h3 class="md-heading"><a href="{{ route('blog.details',$v_userBlog->id) }}">{{ $v_userBlog->title }}</a></h3>
+                              <p>{!! $v_userBlog->short_content !!}</p>
                               <a  href="{{ route('blog.details',$v_userBlog->id) }}">Read More</a> </div>
                       </div>
                   </div>
@@ -119,11 +124,11 @@
             </article>
       </div>  
 
-
-
         <div class="clearfix"></div>
     </div>
-      <script src="{{asset('backend/node_modules/jquery/dist/jquery.min.js')}}">
+
+
+<script src="{{asset('backend/node_modules/jquery/dist/jquery.min.js')}}">
 </script>
 <script src="{{asset('backend/node_modules/popper.js/dist/umd/popper.min.js')}}">
 </script>

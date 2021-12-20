@@ -39,14 +39,14 @@ class BlogController extends Controller
             $imageName = $request->file->store('public');
         }
 
-        $data                = new Blog;
-        $data->title         = $request->title_blog;
-        $data->category_id   = $request->category_blog;
-        $data->author       = $request->author;
-        $data->content       = $request->content;
-        $data->status        = $request->status;
-        $data->pictureCaption        = $request->pictureCaption;
-        $data->picture       = $imageName;
+        $data                   = new Blog;
+        $data->title            = $request->title_blog;
+        $data->category_id      = $request->category_blog;
+        $data->user_id          = Session::get('id');;
+        $data->content          = $request->content;
+        $data->status           = $request->status;
+        $data->pictureCaption   = $request->pictureCaption;
+        $data->picture          = $imageName;
 
     //dd($data);
        $data->save();

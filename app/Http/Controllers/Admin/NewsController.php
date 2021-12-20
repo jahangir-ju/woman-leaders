@@ -47,7 +47,7 @@ class NewsController extends Controller
 
         // dd($data);
         $data->save();
-        return redirect('/news/create')->with('status', 'store');;
+        return redirect()->back()->with('status', 'store');;
     }
      public function unactive($id)
     {
@@ -103,7 +103,7 @@ class NewsController extends Controller
         // dd($data);
 
         $data->save();
-        return redirect('/news/create')->with('status', 'updated new successfully');;
+        return redirect()->back()->with('status', 'updated new successfully');;
     }
 
 

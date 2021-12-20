@@ -12,7 +12,7 @@
 
         @foreach($events as $event)
           <div class="row-sm-6 col-md-4 my-3">
-            <img src="{{asset(Storage::disk('local')->url($event->eventImage))}}" class="img-fluid rounded" alt="picture">
+            <img src="{{asset(Storage::disk('local')->url($event->eventImage))}}" class="img-fluid rounded" alt="picture" style="height: 200px">
 
 
             <p class="my-3" >

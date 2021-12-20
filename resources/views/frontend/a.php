@@ -11,3 +11,18 @@ In addition, as further discussed in the aforementioned article by Cigna, state 
 Building one’s healthcare team is also especially important for diseases such as Alzheimer’s and dementia. With regards to Alzheimer’s disease, The Cleveland Clinic defines Alzheimer’s disease as “a progressive and fatal disease in which nerve cells in the brain degenerate and brain matter shrinks, resulting in impaired thinking, behavior and memory.” With regards to dementia, according to the Mayo Clinic, common symptoms of dementia include memory loss, difficulty in performing tasks, difficulties with communication, and personality changes. According to the Mayo Clinic, in addition to cognitive symptoms, many types of dementia also include physical symptoms. These include the erratic eye movements of Huntington’s disease or the tremors linked to Parkinson’s disease.
 
 Ultimately, the severity of both Alzheimer’s disease and dementia makes it all the more important to have an effective healthcare team to help one cope with these diseases. In doing so, an individual living with Alzheimer’s and dementia who is able to have an effective healthcare team, despite the presence of disease, can lead a healthier and fulfilling life.
+
+On this day, over two billion people (over a third of the world's population) will celebrate the birth of Christ.
+
+Christmas Day celebrates the Nativity of Jesus which according to tradition took place on December 25th 1 BC. December  25th will be a public holiday in most countries around the world. If 25 December falls on a weekend, then a nearby weekday may be taken as a holiday in lieu.
+
+
+The International Women's Day is being observed in Bangladesh as elsewhere across the globe on Monday celebrating women's achievement, raising awareness against bias and taking action for equality.
+
+According to United Nations Women, the theme for International Women’s Day 2021 is, ‘Women in leadership: Achieving an equal future in a Covid-19 world’.
+
+International Women’s Day is observed every year on March 8 to celebrate the women’s movement and struggle for equality. This year’s celebration will be a little different around the world because of the Covid-19 pandemic.
+
+To mark the day, different organizations have chalked out elaborate programs maintaining health guidelines and social distancing rules.
+
+Speaker Dr Shirin Sharmin Chaudhury on Sunday said that women leadership is crucial in dealing with the adverse effect of Covid-19 in Bangladesh.
