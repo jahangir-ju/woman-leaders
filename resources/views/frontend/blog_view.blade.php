@@ -44,8 +44,7 @@
     </div>
   </div>
 
-
-    
+ 
 
       <div class="col-6 col-md-4">
         <div class="right_header">

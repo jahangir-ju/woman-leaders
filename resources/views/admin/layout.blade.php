@@ -104,7 +104,7 @@
 <!-- partial:partials/_navbar.html -->
 <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="#">
+        <a class="navbar-brand brand-logo" href="{{ route('admin.dashboard') }}">
            Women Leaders
         </a>
     </div>
@@ -166,7 +166,7 @@
                     </span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('admin.dashboard') }}">
                         <i class="mdi mdi-gauge menu-icon">
                         </i>
                         <span class="menu-title">
@@ -224,9 +224,13 @@
             </ul>
         </nav>
         <!-- partial -->
+
         <div class="content-wrapper">
             @yield('admin_content')
+
         </div>
+
+        
         <footer class="footer">
             <div class="container-fluid clearfix">
                 <span class="float-right">

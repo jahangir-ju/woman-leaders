@@ -46,9 +46,9 @@
             <!----------------Start Top Social icon --------------->
             <div class="col-sm-5">
               <div class="socail-icon">
-                <a href="#" class="fa fa-facebook"></a>
+                <a href="https://www.facebook.com/Jahangir.bsc2020/" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-linkedin"></a>
+                <a href="https://www.linkedin.com/in/md-jahangir-alam-8609a0142/" class="fa fa-linkedin"></a>
                 <a href="#" class="fa fa-instagram"></a>
               </div>
             </div>   <!----------------End Top Social Icon --------------->
