@@ -16,7 +16,7 @@
       
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel">
-                                <h3 class="register-heading">Apply as a Employee</h3>
+                                <h3 class="register-heading">User Login</h3>
 
                                 <form action="{{ route('user.login') }}" method="post"> @csrf
                                   <div class="row register-form">

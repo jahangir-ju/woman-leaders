@@ -2,6 +2,7 @@
 @section('content')
 <section id="project" class="p-5">
     <div class="container">
+      <h3 style="text-align: center; text-decoration: underline; color: limegreen;">All News</h3>
       <div class="row">
 
      @foreach($news_views as $news_view)

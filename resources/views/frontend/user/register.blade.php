@@ -1,8 +1,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="{{ asset('Frontend/css/register.css') }}" rel="stylesheet" id="bootstrap-css">
 
-<!------ Include the above in your HEAD tag ---------->
-
 <div class="container register">
 	         @include('component.error')
                 <div class="row">
@@ -16,7 +14,7 @@
       
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel">
-                                <h3 class="register-heading">Apply as a Employee</h3>
+                                <h3 class="register-heading">User Register form</h3>
 
                                 <form action="{{ route('user.save') }}" method="post"> @csrf
 	                                <div class="row register-form">

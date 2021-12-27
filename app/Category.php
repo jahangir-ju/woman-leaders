@@ -8,6 +8,6 @@ use App\Blog;
 class Category extends Model
 {
     public function blogs() {
-        return $this->hasMany(Blog::class)->whereStatus(1)->take(2);
+        return $this->hasMany(Blog::class)->whereStatus(1)->latest()->take(2);
     }
 }

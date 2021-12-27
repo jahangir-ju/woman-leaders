@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @section('content')
   <section id="project" class="p-5">
+    <p style="text-decoration: underline;">Event/Description</p>
         <div class="row">
 
           <div class="row-sm-6 col-md-6">
@@ -11,7 +12,7 @@
           </div>
 
           <div class="row-sm-6 col-md-6">
-            <p>{{$eventdescription->eventName}}</p>
+            <h3>{{$eventdescription->eventName}}</h3>
                <ul>
                  <li><span style="font-size: 20px; color:red;">Date : {{$eventdescription->DateFormat}}</span> </li>
                  <li><span style="font-size: 20px; color:red;">Time : {{$eventdescription->TimeFormat}}</span> </li>

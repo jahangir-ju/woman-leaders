@@ -29,16 +29,11 @@
                       </div>
                     </div>
                   <hr>
-                  @endforeach
-                   
+                  @endforeach                  
             </article>
+ 
+      </div>  
 
-
-      </div>
-
-
-  
-   
       <!------------Blog post Modul start-------------->
       <!---------Left Module start------>
       <div class="col-md-4">
@@ -48,5 +43,6 @@
 
         <div class="clearfix"></div>
     </div>
+      {{ $blogView->links() }}
 
   @endsection()
