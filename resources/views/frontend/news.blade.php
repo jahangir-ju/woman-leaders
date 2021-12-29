@@ -24,7 +24,7 @@
       
     </div>
    </section>
-   
+   {{$news_views->links()  }}
 
 
 @endsection

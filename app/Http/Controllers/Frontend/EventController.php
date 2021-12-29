@@ -9,7 +9,7 @@ use App\EventRegister;
 class EventController extends Controller
 {
     public function event(){
-        $events = event::all();
+        $events = event::where('status',1)->latest()->get();
         return view('frontend/event',compact('events'));
     }
 

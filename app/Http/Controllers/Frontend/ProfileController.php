@@ -12,7 +12,7 @@ class ProfileController extends Controller
 {
     public function index(){
         $id          = session('id');
-        $userBlogs   =Blog::where('user_id', $id)->get();
+        $userBlogs   =Blog::where('user_id', $id)->latest()->get();
         return view('frontend.user.profile',compact('userBlogs'));
     }
 
