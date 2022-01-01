@@ -29,7 +29,7 @@ class BlogController extends Controller
             'author'         => 'required',
             'content'        => 'required',
             'status'         => 'required',
-            'pictureCaption'         => 'required',
+            'pictureCaption' => 'required',
             'file'           => 'required',
           
 
