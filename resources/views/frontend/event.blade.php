@@ -13,7 +13,7 @@
         @foreach($events as $event)
           <div class="row-sm-6 col-md-4 my-3">
 
-            @if(blank($event->eventImage))
+            @if(!blank($event->eventImage))
             <img src="{{asset('image/'.$event->eventImage)}}" class="img-fluid rounded" alt="picture">
           @else
             <img src="{{asset('frontend/images/default.jpg')}}" class="img-fluid rounded" alt="picture">

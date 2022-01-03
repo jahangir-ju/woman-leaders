@@ -36,8 +36,8 @@ class EventController extends Controller
         $eventImage = "";
         if ($request->hasfile('eventImage')) {
 
-             $imageName = time().'.'.$request->eventImage->extension();
-            $request->eventImage->move(public_path('image'),$imageName);
+             $eventImage = time().'.'.$request->eventImage->extension();
+            $request->eventImage->move(public_path('image'),$eventImage);
            
         }
          $speakerImage = "";

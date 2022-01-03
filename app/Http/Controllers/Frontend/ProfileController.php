@@ -18,14 +18,12 @@ class ProfileController extends Controller
 
     public function userBlogCreate(Request $request){
         
-         $validateData = $request->validate([
+        $validateData = $request->validate([
             'title_blog'     => 'required',
-       
-          
-
+            'category_blog'  => 'required',
         ]);
-        if ($request->hasfile('file')) {
 
+        if ($request->hasfile('file')) {
             $imageName = $request->file->store('public');
         }
 

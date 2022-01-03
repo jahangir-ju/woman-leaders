@@ -43,7 +43,7 @@
                       <div class="col-sm-9">
 
                          <select class="form-control" name="category_blog">
-                            <option>
+                            <option value="">
                                 Select Category
                              </option>
 
