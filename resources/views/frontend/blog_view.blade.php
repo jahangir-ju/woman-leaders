@@ -63,7 +63,7 @@
                           <img class="pt-4" src="{{asset('image/'.$v_relateblog->picture)}}" class="img-responsive" alt="image post" style="height: 80%; width:100%">
                             
                               @else
-                              <img class="pt-4" src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="height: 80%; width:100%">
+                              <img class="pt-4" src="{{asset('frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="height: 80%; width:100%">
 
                               @endif
 

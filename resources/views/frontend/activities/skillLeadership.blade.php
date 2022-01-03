@@ -1,6 +1,6 @@
 
 @extends('index')
-<link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/activities.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/activities.css') }}">
 @section('content')
 	<div class="abilityBody">
 

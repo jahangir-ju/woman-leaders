@@ -29,7 +29,7 @@ class EventController extends Controller
             'firstname'     => 'required',
             'lastname'      => 'required',
             'email'         => 'required',
-            'phone'         => 'required',
+            'phone'         => 'required|numeric|min:11|max:11',
             'address'       => 'required',
             'status'        => 'required',
             'occupation'    => 'required',

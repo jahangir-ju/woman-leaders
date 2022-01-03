@@ -1,6 +1,5 @@
-
 @extends('index')
-<link rel="stylesheet" href="{{asset('Frontend/css/about.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/about.css')}}">
 @section('content')
 
     <div class="bodymodule">    

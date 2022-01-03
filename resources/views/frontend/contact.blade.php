@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" href="{{asset('Frontend/css/contact.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}">
 @section('content')
 
     <div id="contact">

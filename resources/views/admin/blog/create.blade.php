@@ -20,8 +20,8 @@
                       <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Select Category</label>
                       <div class="col-sm-9">
 
-                         <select class="form-control" name="category_blog">
-                            <option>
+                         <select class="form-control" name="category">
+                            <option value="">
                                 Select Category
                              </option>
 

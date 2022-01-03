@@ -7,7 +7,7 @@
         <div class="row">
 
           <div class="row-sm-6 col-md-6">
-           @if(!blank($eventdescription->eventImage))
+           @if(blank($eventdescription->eventImage))
             <img src="{{asset('image/'.$eventdescription->eventImage)}}" class="img-fluid rounded" style="height:60%; width:80%" alt="picture">
             @else
             <img src="{{asset('frontend/images/avator.png')}}" lass="img-fluid rounded" style="height:60%; width:80%" alt="picture">

@@ -25,7 +25,7 @@ class BlogController extends Controller
 
          $validateData = $request->validate([
             'title_blog'     => 'required',
-            'category_blog'  => 'required',
+            'category'       => 'required',
             'author'         => 'required',
             'content'        => 'required',
             'status'         => 'required',
@@ -42,7 +42,7 @@ class BlogController extends Controller
 
         $data                   = new Blog;
         $data->title            = $request->title_blog;
-        $data->category_id      = $request->category_blog;
+        $data->category_id      = $request->category;
         $data->user_id          = Session::get('id');;
         $data->content          = $request->content;
         $data->status           = $request->status;
