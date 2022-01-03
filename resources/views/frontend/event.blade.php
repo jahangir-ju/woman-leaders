@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" type="text/css" href="{{asset('Frontend/css/event.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/event.css')}}">
 @section('content')
 <section id="project" class="p-5">
     <div class="container">
@@ -12,7 +12,12 @@
 
         @foreach($events as $event)
           <div class="row-sm-6 col-md-4 my-3">
-            <img src="{{asset(Storage::disk('local')->url($event->eventImage))}}" class="img-fluid rounded" alt="picture" style="height: 200px">
+
+            @if(blank($event->eventImage))
+            <img src="{{asset('image/'.$event->eventImage)}}" class="img-fluid rounded" alt="picture">
+          @else
+            <img src="{{asset('frontend/images/default.jpg')}}" class="img-fluid rounded" alt="picture">
+          @endif
 
 
             <p class="my-3" >

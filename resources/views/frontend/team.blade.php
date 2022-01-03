@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" href="{{asset('Frontend/css/team.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/team.css')}}">
 @section('content')
 
   <div class="container">
@@ -9,7 +9,7 @@
         <div class="row"> 
           <div class="col-md-4">                
                 <div class="card">
-                  <img src="{{asset('Frontend/images/Jahangir.jpg')}}" alt="Avatar" style="width:100%">
+                  <img src="{{asset('frontend/images/Jahangir.jpg')}}" alt="Avatar" style="width:100%">
                 </div>     
           </div>  
           <div class="col-md-8">
@@ -31,7 +31,7 @@
           <div class="row"> 
             <div class="col-md-4">          
                 <div class="card">
-                    <img src="{{asset('Frontend/images/Jahangir.jpg')}}" alt="Avatar" style="width:100%">
+                    <img src="{{asset('frontend/images/Jahangir.jpg')}}" alt="Avatar" style="width:100%">
                   </div>         
             </div>
             <div class="col-md-8">

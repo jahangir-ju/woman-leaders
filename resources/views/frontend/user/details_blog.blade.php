@@ -6,10 +6,10 @@
     <div class="blog-content">
             <figure>
               @if(!blank($userBlogDetails->picture))
-                <img class="pt-4" src="{{asset(Storage::disk('local')->url($userBlogDetails->picture))}}" class="img-responsive" alt="image post" style="width: 100%; height: 60%;">
+                <img class="pt-4" src="{{asset('image/'.$userBlogDetails->picture)}}" class="img-responsive" alt="image post" style="width: 100%; height: 60%;">
                 <figcaption>{{ $userBlogDetails->pictureCaption }}</figcaption>
                 @else
-                <img class="pt-4" src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="width: 100%; height: 60%;">
+                <img class="pt-4" src="{{asset('frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="width: 100%; height: 60%;">
 
                 @endif
 

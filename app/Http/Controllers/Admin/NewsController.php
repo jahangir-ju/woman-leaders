@@ -24,7 +24,7 @@ class NewsController extends Controller
 
           $validateData      = $request->validate([
             'title'          => 'required',
-            'category'       => 'required',
+            'category'       => 'required|not_in:0',
             'content'        => 'required',
             'file'           => 'required',
             'pictureCaption' => 'required',
@@ -33,8 +33,9 @@ class NewsController extends Controller
        
 
           if ($request->hasfile('file')) {
+             $imageName = time().'.'.$request->file->extension();
+            $request->file->move(public_path('image'),$imageName);
 
-          $imageName = $request->file->store('public');
         }
 
         $data                   = new news;

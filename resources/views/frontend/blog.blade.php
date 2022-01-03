@@ -19,9 +19,9 @@
                                   <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
                                       <div class="post-type post-img">
                                        @if(!blank($blog->picture))
-                                          <a class="pt-4" href=""><img src="{{asset(Storage::disk('local')->url($blog->picture))}}" class="img-responsive" alt="image blog"></a>
+                                          <a class="pt-4" href=""><img src="{{asset('image/'.$blog->picture)}}" class="img-responsive" alt="image blog"></a>
                                         @else
-                                        <a class="mt-4" href=""><img src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image blog"></a>
+                                        <a class="mt-4" href=""><img src="{{asset('frontend/images/default.jpg')}}" class="img-responsive" alt="image blog"></a>
                                         @endif
                                       </div>
                                   

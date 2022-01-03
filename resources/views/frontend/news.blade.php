@@ -9,9 +9,9 @@
         <div class="row-sm-6 col-md-4 my-3">
 
           @if(!blank($news_view->file))
-            <img src="{{asset(Storage::disk('local')->url($news_view->file))}}" class="img-fluid rounded" alt="picture">
+            <img src="{{asset('image/'.$news_view->file)}}" class="img-fluid rounded" alt="picture">
           @else
-            <img src="{{asset('Frontend/images/default.jpg')}}" class="img-fluid rounded" alt="picture">
+            <img src="{{asset('frontend/images/default.jpg')}}" class="img-fluid rounded" alt="picture">
           @endif
 
           <h5 class="my-3"><a href="{{ route('newsDetails',$news_view->id) }}" >{{$news_view->title}}</a></h5>

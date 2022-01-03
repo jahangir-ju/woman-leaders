@@ -3,7 +3,7 @@
   <div class="col-12 col-lg-8 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h2 class="card-title">Input from</h2>
+            <h2 class="card-title">Write news</h2>
             @include('component.error')
             
             <form action="{{route('news.save')}}"  class="forms-sample" enctype="multipart/form-data" method="post">@csrf
@@ -18,7 +18,7 @@
                     <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Select Category</label>
                     <div class="col-sm-9">
 
-                       <select class="form-control" name="category">
+                       <select class="form-control" name="category" required>
                           <option>
                               Select Category
                            </option>

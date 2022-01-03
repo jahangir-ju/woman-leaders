@@ -8,9 +8,9 @@
           <div class="card">
              @if(!blank($news->file))
 
-        <img class="card-img-top"src="{{asset(Storage::disk('local')->url($news->file))}}" alt="news image" style="height:300px;">
+        <img class="card-img-top"src="{{asset('image/'.$news->file)}}" alt="news image" style="height:300px;">
         @else
-        <img class="card-img-top" src="{{asset('Frontend/images/default.jpg')}}" alt="news image" style="height:300px;">
+        <img class="card-img-top" src="{{asset('frontend/images/default.jpg')}}" alt="news image" style="height:300px;">
         @endif
 
            

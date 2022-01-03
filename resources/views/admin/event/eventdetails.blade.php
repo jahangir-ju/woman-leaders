@@ -1,5 +1,5 @@
 @extends('admin.layout')
-<link rel="stylesheet" type="text/css" href="{{asset('Frontend/css/event.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/event.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @section('admin_content')
 <section id="project" class="p-5">
@@ -7,7 +7,7 @@
         <div class="row">
 
           <div class="row-sm-6 col-md-6">
-            <img src="{{asset(Storage::disk('local')->url($eventDetails->eventImage))}}" class="img-fluid rounded" style="height:60%; width:80%" alt="picture">
+            <img src="{{asset('image/'.$eventDetails->eventImage)}}" class="img-fluid rounded" style="height:60%; width:80%" alt="picture">
             
           </div>
 
@@ -40,9 +40,9 @@
                 <div class="card">
 
                   @if(!blank($eventDetails->speakerImage))
-                    <img src="{{asset(Storage::disk('local')->url($eventDetails->speakerImage))}}" alt="John" style="width:100%">
+                    <img src="{{asset('image/'.$eventDetails->speakerImage)}}" alt="John" style="width:100%">
                   @else
-                      <img src="{{asset('Frontend/images/avator.png')}}" alt="John" style="width:100%">
+                      <img src="{{asset('frontend/images/avator.png')}}" alt="John" style="width:100%">
                   @endif
 
                   <h1>{{$eventDetails->speaker}}</h1>

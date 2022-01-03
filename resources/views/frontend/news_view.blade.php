@@ -9,11 +9,11 @@
           	<p>Publication date :: {{ $news_details->CustomDate }}</p>
                <figure>
                   @if(!blank($news_details->file))
-                      <img class="pt-4" src="{{asset(Storage::disk('local')->url($news_details->file))}}" class="img-responsive" alt="image post" style="width: 100%; height: 450px;">
+                      <img class="pt-4" src="{{asset('image/'.$news_details->file)}}" class="img-responsive" alt="image post" style="width: 100%; height: 450px;">
 
                         <figcaption>{{ $news_details->pictureCaption }}</figcaption>
                     @else
-                    <img class="pt-4" src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="width: 100%; height: 450px;">
+                    <img class="pt-4" src="{{asset('frontend/images/default.jpg')}}" class="img-responsive" alt="image post" style="width: 100%; height: 450px;">
                     @endif
                   </figure>
               
@@ -36,9 +36,9 @@
                         </div>
                         <div class="col-6 col-md-4">
                           @if(!blank($news_details->file))
-                           <img src="{{asset(Storage::disk('local')->url($news_details->file))}}" alt="Notebook" style="height: 80%; width:100%">
+                           <img src="{{asset('image/'.$news_details->file)}}" alt="Notebook" style="height: 80%; width:100%">
                            @else
-                            <img src="{{asset('Frontend/images/default.jpg')}}" alt="Notebook" style="height: 80%; width:100%">
+                            <img src="{{asset('frontend/images/default.jpg')}}" alt="Notebook" style="height: 80%; width:100%">
                             @endif
                         </div>
                       </div>

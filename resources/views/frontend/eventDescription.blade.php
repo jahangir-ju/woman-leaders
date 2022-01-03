@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" type="text/css" href="{{asset('Frontend/css/event.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/event.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @section('content')
   <section id="project" class="p-5">
@@ -7,7 +7,11 @@
         <div class="row">
 
           <div class="row-sm-6 col-md-6">
-            <img src="{{asset(Storage::disk('local')->url($eventdescription->eventImage))}}" class="img-fluid rounded" style="height:60%; width:80%" alt="picture">
+           @if(!blank($eventdescription->eventImage))
+            <img src="{{asset('image/'.$eventdescription->eventImage)}}" class="img-fluid rounded" style="height:60%; width:80%" alt="picture">
+            @else
+            <img src="{{asset('frontend/images/avator.png')}}" lass="img-fluid rounded" style="height:60%; width:80%" alt="picture">
+            @endif
             
           </div>
 
@@ -41,9 +45,9 @@
                 <div class="card">
 
                   @if(!blank($eventdescription->speakerImage))
-                    <img src="{{asset(Storage::disk('local')->url($eventdescription->speakerImage))}}" alt="John" style="width:100%">
+                    <img src="{{asset('image/'.$eventdescription->speakerImage)}}" alt="John" style="width:100%">
                   @else
-                      <img src="{{asset('Frontend/images/avator.png')}}" alt="John" style="width:100%">
+                      <img src="{{asset('frontend/images/avator.png')}}" alt="John" style="width:100%">
                   @endif
 
                   <h1>{{$eventdescription->speaker}}</h1>

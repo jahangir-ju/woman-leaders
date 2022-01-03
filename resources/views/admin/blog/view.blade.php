@@ -7,9 +7,9 @@
     <div class="blog-content">
 
          @if(!blank($view->picture))
-        <img src="{{asset(Storage::disk('local')->url($view->picture))}}" alt="Blog Picture" style="height:30%; width:100%;">
+        <img src="{{asset('image/'.$view->picture)}}" alt="Blog Picture" style="height:30%; width:100%;">
         @else
-        <img src="{{ asset('Frontend/images/default.jpg') }}" alt="Blog Picture" style="height:30%; width:100%;">
+        <img src="{{ asset('frontend/images/default.jpg') }}" alt="Blog Picture" style="height:30%; width:100%;">
         @endif
         <h2 class="pt-5">{{$view->title}}</h2>
         <h4><span style="color: red;">{{$view->category->name}}</span></h4>

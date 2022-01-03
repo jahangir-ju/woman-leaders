@@ -32,7 +32,7 @@ class DashboardController extends Controller
             Session::put('id', auth()->id());
             return view('admin.layout');
         } else {
-            Session::put('message','Email or Password Invalid');
+            Session::flash('status', 'Email or Password Invalid');
             return Redirect()->back();
         }        
     }

@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" href="{{asset('Frontend/css/photo.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/photo.css')}}">
 @section('content')
 
 
@@ -11,7 +11,7 @@
           <div class="col-md-4">
 
             <div class="imageContainer">
-                <img src="{{ asset('Frontend/images/Jahangir.jpg') }}" alt="Notebook" style="width:100%;">
+                <img src="{{ asset('frontend/images/Jahangir.jpg') }}" alt="Notebook" style="width:100%;">
                 <div class="content">
                   <h1>Heading</h1>
                   <p>Lorem ipsum..</p>
@@ -22,7 +22,7 @@
 
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/Jahangir.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/Jahangir.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h1>Heading</h1>
                 <p>Lorem ipsum..</p>

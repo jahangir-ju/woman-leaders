@@ -9,9 +9,9 @@
 
         @if(!blank($view->file))
 
-          <img src="{{asset(Storage::disk('local')->url($view->file))}}" alt="Notebook" style="height:25%; width:100%;">
+          <img src="{{asset('image/'.$view->file)}}" alt="Notebook" style="height:25%; width:100%;">
         @else
-          <img src="{{asset('Frontend/images/default.jpg')}}" alt="Notebook" style="height:25%; width:100%;">
+          <img src="{{asset('frontend/images/default.jpg')}}" alt="Notebook" style="height:25%; width:100%;">
         @endif
 
           <h3 class="pt-5">{{$view->title}}</h3>

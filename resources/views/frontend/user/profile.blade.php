@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/profile.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/profile.css') }}">
 <link href="{{ asset('backend/node_modules/summernote/dist/summernote-bs4.css') }}" rel="stylesheet"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 @section('content')
@@ -10,7 +10,7 @@
 
 
       <div class="profileBody">
-        <img src="{{ asset('Frontend/images/profile.png') }}" style="height: 200px; width: 200px; border-radius:45%;">
+        <img src="{{ asset('frontend/images/profile.png') }}" style="height: 200px; width: 200px; border-radius:45%;">
         <p>{{ session('name') }}</p>
       </div>
           <div class="temp2 pt-4">
@@ -100,7 +100,7 @@
                           <div class="post-type post-img">
                          
                            
-                              <a href="#"><img src="{{asset(Storage::disk('local')->url($v_userBlog->picture))}}" class="img-responsive" alt="image post"></a>
+                              <a href="#"><img src="{{asset('image/'.$v_userBlog->picture)}}" class="img-responsive" alt="image post"></a>
                               @if($v_userBlog->status == 1)
                                 <p class="btn btn-success btn-sm" href="#" role="button">Published</p>
                               @else

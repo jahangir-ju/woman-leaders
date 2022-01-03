@@ -1,5 +1,5 @@
 @extends('index')
-<link rel="stylesheet" href="{{asset('Frontend/css/photo.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/photo.css')}}">
 @section('content')
 
 <div class="container">
@@ -10,7 +10,7 @@
 
           <div class="col-md-4">
             <div class="imageContainer">
-                <img src="{{ asset('Frontend/images/1.jpg') }}" alt="Notebook" style="width:100%;">
+                <img src="{{ asset('frontend/images/1.jpg') }}" alt="Notebook" style="width:100%;">
                 <div class="content">
                   <h4>Heading</h4>
                 </div>
@@ -19,7 +19,7 @@
 
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/2.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/2.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/3.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/3.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/4.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/4.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>
@@ -43,7 +43,7 @@
         </div>
           <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/5.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/5.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>
@@ -51,7 +51,7 @@
         </div>
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/6.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/6.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/7.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/7.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/8.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/8.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>      
                  </div>
@@ -75,7 +75,7 @@
         </div>
          <div class="col-md-4">
           <div class="imageContainer">
-              <img src="{{ asset('Frontend/images/9.Jpg') }}" alt="Notebook" style="width:100%;">
+              <img src="{{ asset('frontend/images/9.jpg') }}" alt="Notebook" style="width:100%;">
               <div class="content">
                 <h4>Heading</h4>
               </div>

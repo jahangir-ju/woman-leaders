@@ -4,9 +4,9 @@
 <title>Women leaders</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{asset('Frontend/css/style.css')}}">
-<link rel="stylesheet" href="{{asset('Frontend/css/nav.css')}}">
-<link rel="stylesheet" href="{{asset('Frontend/css/post.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/nav.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/post.css')}}">
 
 
 </head>
@@ -61,7 +61,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="logo-area">
-                <img src="{{ asset('Frontend/images/logo.png') }}">
+                <img src="{{ asset('frontend/images/logo.png') }}">
             </div>
 
           </div>
@@ -96,9 +96,9 @@
 
    
 
-<script src="{{asset('Frontend/js/jquery.min.js')}}"></script>
-<script src="{{asset('Frontend/js/popper.min.js')}}"></script>
-<script src="{{asset('Frontend/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('frontend/js/jquery.min.js')}}"></script>
+<script src="{{asset('frontend/js/popper.min.js')}}"></script>
+<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
     
 </body>
 </html>

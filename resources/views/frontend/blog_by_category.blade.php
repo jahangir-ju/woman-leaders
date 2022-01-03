@@ -14,9 +14,9 @@
                       <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
                           <div class="post-type post-img">
                             @if(!blank($show_by_category->picture))
-                              <a href="#"><img src="{{asset(Storage::disk('local')->url($show_by_category->picture))}}" class="img-responsive" alt="image post"></a>
+                              <a href="#"><img src="{{asset('image/'.$show_by_category->picture)}}" class="img-responsive" alt="image post"></a>
                             @else
-                              <a href="#"><img src="{{asset('Frontend/images/default.jpg')}}" class="img-responsive" alt="image post"></a>
+                              <a href="#"><img src="{{asset('frontend/images/default.jpg')}}" class="img-responsive" alt="image post"></a>
                             @endif
                           </div>
                       
